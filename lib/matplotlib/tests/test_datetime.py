@@ -545,8 +545,12 @@ class TestDatetimePlotting:
     @pytest.mark.xfail(reason="Test for matshow not written yet")
     @mpl.style.context("default")
     def test_matshow(self):
+        a = np.zeros((10, 10))
+        dt_start = datetime.datetime(2010, 1, 1)
+        dt_end = datetime.datetime(2020, 1, 1)
+        extent = (dt_start, dt_end, dt_end, dt_start)
         fig, ax = plt.subplots()
-        ax.matshow(...)
+        ax.matshow(a, extent=extent)
 
     @pytest.mark.xfail(reason="Test for pcolor not written yet")
     @mpl.style.context("default")
